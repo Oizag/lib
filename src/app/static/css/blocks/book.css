@@ -1,0 +1,11 @@
+.book_block {
+    background-image: url("/static/images/back.jpg");
+}
+
+.book_img{
+    cursor: pointer;
+}
+
+.book_name{
+    border-block-end: solid;
+}

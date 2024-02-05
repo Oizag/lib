@@ -1,0 +1,6 @@
+{% load wagtailcore_tags %}
+<div class="list-group">
+    {% for fulltextresource in value.fulltextresources %}
+        {{fulltextresource}}
+    {% endfor %}
+</div>

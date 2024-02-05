@@ -1,0 +1,16 @@
+{% load wagtailcore_tags navigation_tags wagtailimages_tags %}
+
+<a class="card__link" href="{% pageurl blog %}">
+    <div class="card h-100 " >
+        {% if blog.image %}
+            {% image blog.image width-1000 as image %}
+            <img src="{{image.url}}" class="card-img-top" />
+        {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        {% if blog.introduction %}
+            <p class="card-text">{{ blog.introduction|truncatewords:15 }}</p>
+        {% endif %}
+        </div>
+    </div>
+</a>

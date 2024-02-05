@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "wagtail-template"
+version = "0.1.0"
+description = ""
+authors = ["Nikita <grishchenko@rsue.ru>"]
+readme = "README.md"
+
+
+[tool.black]
+line-length = 79
+
+
+[tool.isort]
+multi_line_output=3
+include_trailing_comma=true
+use_parentheses=true
+line_length=79
+
+
+[tool.taskipy.tasks]
+manage = "python ./src/manage.py"
+clear = "task manage clear"
+dumpdata = "task manage dump"
+migrate = "task manage migrate --noinput"
+server = "task manage runserver"
+loaddata = "task manage loaddata"
+createapp = "task manage createapp"
+initconfig = "task manage initconfig"
+makemigrations = "task manage makemigrations"
+createsuperuser = "task manage createsuperuser"
+collectstatic = "task manage collectstatic --noinput"
+gunicorn = "gunicorn --timeout 300 --chdir ./src app.wsgi:application -b 0.0.0.0:8000"
+defaultadmin = "task manage defaultadmin"
+defaultfixtures = "task manage defaultfixtures"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+wagtail = "^5.2.1"
+taskipy = "^1.12.2"
+django-environ = "^0.11.2"
+wagtail-link-block = "^1.1.7"
+gunicorn = "^21.2.0"
+psycopg2 = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

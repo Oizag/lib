@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-index{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+
+{% image page.background width-400 as background %}
+
+<div class="index__header" style="background-image: url('{{background.url}}')">
+    <div class="container">
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% include_block page.body %}
+    </div>
+</div>
+
+
+{% endblock content %}

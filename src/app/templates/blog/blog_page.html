@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load navigation_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="blog__detail">
+    {% if page.image %}
+        {% image page.image width-400 as background %}
+        <div class="index__header" style="background-image: url('{{background.url}}')"></div>
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-3">
+                <h1>
+                    {{ page.title }}
+                </h1>
+                {% if page.date_published %}
+                    <p>
+                        {{page.date_published}}
+                    </p>
+                {% endif %}
+            </div>
+            {% if page.body %}
+                <div class="col-12 mb-3">
+                    {{ page.body }}
+                </div>
+            {% endif %}
+            {% if page.get_gallery %}
+                <div class="col-12">
+                    <h3>
+                        Галерея
+                    </h3>
+                </div>
+                <div class="col-8 offset-2 mb-5">
+                    {% include "blog/blog_gallery.html" %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

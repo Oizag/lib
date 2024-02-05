@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<div class="list-group">
+    {% for document in value.documents %}
+        {{document}}
+    {% endfor %}
+</div>

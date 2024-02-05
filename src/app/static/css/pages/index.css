@@ -1,0 +1,9 @@
+@import url("blog.css");
+
+.index__header {
+  width: 100%;
+  min-height: 700px;
+  background-size: no-repeat;
+  background-size: cover;
+  color: #fff;
+}

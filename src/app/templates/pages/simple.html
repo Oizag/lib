@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block title %} {{ page.title }} | {{ block.super }} {% endblock title %}
+
+{% block body_class %}template-index{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>
+                {{ page.title }}
+            </h1>
+        </div>
+        {% include_block page.body %}
+    </div>
+</div>
+
+{% endblock content %}

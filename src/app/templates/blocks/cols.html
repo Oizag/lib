@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+<div class="row">
+    {% for item in value.content %}
+        <div class="{{ value.class_column }}">
+            {{item}}
+        </div>
+    {% endfor %}
+</div>

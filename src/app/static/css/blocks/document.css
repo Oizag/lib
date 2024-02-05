@@ -1,0 +1,10 @@
+.document__name {
+  margin: 0;
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 10px 0;
+}
+
+.document__icon {
+  height: 35px;
+}

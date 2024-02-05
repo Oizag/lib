@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags wagtailimages_tags %}
+
+{% block title %}
+    {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<div class="blog__list">
+    {% if page.image %}
+        {% image page.image width-400 as background %}
+        <div class="index__header" style="background-image: url('{{background.url}}')"></div>
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-3">
+                <h1>
+                    {{ page.title}}
+                </h1>
+            </div>
+            {% if posts %}
+                {% for blog in posts %}
+                    <div class="col-12 col-md-4 mb-3">
+                        {% include "blog/blog_card.html" %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12 text-center">
+                    <p>Ничего не добавлено</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

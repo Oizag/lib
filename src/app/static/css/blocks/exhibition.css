@@ -1,0 +1,15 @@
+.exhibition__title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+.exhibition__place {
+    font-size: 19px;
+    margin: 0;
+  }
+
+  .exhibition__card {
+    border-block-end: solid;
+  }

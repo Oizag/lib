@@ -1,0 +1,24 @@
+{% load navigation_tags wagtailimages_tags wagtailsettings_tags%}
+{% get_settings %}
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        {% if settings.base.Settings.logo %}
+            <a class="navbar-brand" href="/">
+                {% image settings.base.Settings.logo height-55 %}
+            </a>
+        {% endif %}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% get_site_root as site_root %}
+          {% top_menu parent=site_root calling_page=self %}
+        </ul>
+      </div>
+    </div>
+    <div class="me-2">
+        <img id="specialButton" style="cursor:pointer;" src="https://lidrekon.ru/images/special.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"/>
+    </div>
+  </nav>

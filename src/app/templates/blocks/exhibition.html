@@ -1,0 +1,14 @@
+{% load wagtailcore_tags static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="exhibition__card my-3 px-2 py-2">
+    <p class="exhibition__title text-center">{{self.title}}</p>
+    <div class="d-flex align-items-center justify-content-between">
+    {% image self.img width-250 height-350 %}
+    <p class="exhibition__place ms-2">{{self.text}}</p>
+    </div>
+    <div class="">
+    <p class="exhibition__place text-end mt-3">{{self.exhibition_place}}</p>
+    <p class="exhibition__place text-end mb-3">{{self.address}}</p>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+{% load wagtailcore_tags %}
+
+<a class="btn btn-primary" href="{{ self.link.get_url }}" {% if self.link.new_window %}target="_blank"{% endif %}>{{ self.text }} </a>

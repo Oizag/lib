@@ -1,0 +1,8 @@
+{% load wagtailcore_tags static %}
+
+<a href="{{self.file.url}}" target="_blank" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex align-items-center">
+        <img class="document__icon" src="{% static 'images/icon/document.svg' %}" >
+        <p class="document__name">{{self.name}}</p>
+    </div>
+</a>

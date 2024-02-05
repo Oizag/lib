@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+<p class="book_block text-white text-center m-0 opacity-75">Новинка</p>
+<div class="d-flex book_block mb-5">
+    {% for book in value.books %}
+        {{book}}
+    {% endfor %}
+</div>
